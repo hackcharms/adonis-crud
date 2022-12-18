@@ -1,0 +1,10 @@
+@layout('layouts/app')
+ @set('title', 'Home page') 
+
+@section('main')
+<div>
+    <h1> Hello There</h1>
+    {{inspect(params,request)}}
+    @!component('components/button',{text:'button is here',type:'button'})
+</div>
+@end

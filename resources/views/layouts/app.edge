@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title }}</title>
+    @entryPointStyles('app')
+    @entryPointScripts('app')
+    @!section('style')
+  </head>
+  <body class="min-h-screen antialiased">
+    @include('partials/navbar')
+    <main id="app" class="px-3 py-4">
+        @!section('main')
+    </main>
+
+    @include('partials/footer')
+    @!section('script')
+  </body>
+</html>
