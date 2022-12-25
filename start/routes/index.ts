@@ -19,8 +19,18 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import View from '@ioc:Adonis/Core/View'
 
 Route.get('/', async ({ view }) => {
-  return view.render('welcome')
+  return view.render('pages.welcome')
 })
 Route.get('/test', 'HomeController.home')
+
+Route.group(() => {
+  Route.get(
+    '/dashboard',
+    async ({ auth }) => await View.render('pages.dashboard', { auth: auth })
+  ).as('dashboard')
+}).middleware('auth:web')
+
+import './auth'

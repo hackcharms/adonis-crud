@@ -1,0 +1,13 @@
+@layout('layouts/app')
+@section('main')
+<div>
+  <h1 class="title"> It Works! </h1>
+  <p class="subtitle">
+    @if(auth.isLoggedIn)
+    Congratulations, <b>{{auth.user.name}}</b> You are logged in.
+    @else
+    You are not logged in
+    @endif
+  </p>
+</div>
+@end
